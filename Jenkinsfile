@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Install Dependencies') {
             steps {
-                sh 'python3 -m pip install -r requirements.txt'
+                sh 'py -m pip install --break-system-packages -r requirements.txt'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'python3 -m pytest'
+                sh 'py -m pytest'
             }
         }
     }
